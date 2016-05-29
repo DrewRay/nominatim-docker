@@ -76,7 +76,7 @@ ADD local.php /app/nominatim/settings/local.php
 RUN ./utils/setup.php --help
 
 
-RUN service postgresql start && \
+RUN service postgresql start && sleep 10 && \
   sudo -u nominatim ./utils/setup.php --osm-file /app/data.pbf --all --threads 2
 
 
